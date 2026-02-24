@@ -1,6 +1,6 @@
 from pydantic import EmailStr, Field
 
-from clients.base_pydantic_modal import BasePhoneModel, BasePydanticModel
+from clients.base_pydantic_modal import BasePydanticModel
 from tools.fake import fake
 
 

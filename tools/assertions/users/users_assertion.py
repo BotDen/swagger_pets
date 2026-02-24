@@ -17,3 +17,14 @@ def assert_created_user(request: CreateUserRequestSchema, response: GetUserRespo
     assert_equal(actual=response.password, expected=request.password, name="password")
     assert_equal(actual=response.phone, expected=request.phone, name="phone")
     assert_equal(actual=response.user_status, expected=request.user_status, name="user_status")
+
+
+def assert_get_user_response(get_user_response: GetUserResponseSchema, create_user_request: CreateUserRequestSchema):
+    assert_equal(actual=get_user_response.id, expected=create_user_request.id, name="id")
+    assert_equal(actual=get_user_response.user_name, expected=create_user_request.user_name, name="user_name")
+    assert_equal(actual=get_user_response.first_name, expected=create_user_request.first_name, name="first_name")
+    assert_equal(actual=get_user_response.last_name, expected=create_user_request.last_name, name="last_name")
+    assert_equal(actual=get_user_response.email, expected=create_user_request.email, name="email")
+    assert_equal(actual=get_user_response.password, expected=create_user_request.password, name="password")
+    assert_equal(actual=get_user_response.phone, expected=create_user_request.phone, name="phone")
+    assert_equal(actual=get_user_response.user_status, expected=create_user_request.user_status, name="user_status")
