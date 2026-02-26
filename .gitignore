@@ -8,6 +8,7 @@ __pycache__
 # allure
 allure-results
 allure-report
+out
 
 # coverage
 coverage.html
