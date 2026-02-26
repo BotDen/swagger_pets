@@ -1,3 +1,4 @@
+import allure
 import pytest
 from pydantic import EmailStr
 
@@ -23,11 +24,13 @@ class UserFixture(BasePydanticModel):
         return self.request.email
 
 
+@allure.title("Инициализация UserClient")
 @pytest.fixture
 def public_user_client() -> UsersClient:
     return get_public_user_client()
 
 
+@allure.title("Создание пользователя для теста")
 @pytest.fixture
 def function_user(public_user_client: UsersClient) -> UserFixture:
     request = CreateUserRequestSchema()

@@ -1,5 +1,6 @@
 from typing import Any
 
+import allure
 from httpx import Client, QueryParams, Response, URL
 from httpx._types import RequestData, RequestFiles
 
@@ -10,6 +11,7 @@ class ApiClient:
     def __init__(self, client: Client):
         self.client = client
 
+    @allure.step("Выполняем GET запрос на {url}")
     def get(
         self,
         url: URL | str,
@@ -24,6 +26,7 @@ class ApiClient:
         """
         return self.client.get(url=url, params=params)
 
+    @allure.step("Выполняем POST запрос на {url}")
     def post(
         self,
         url: URL | str,
@@ -44,6 +47,7 @@ class ApiClient:
         """
         return self.client.post(url=url, params=params, json=json, data=data, files=files)
 
+    @allure.step("Выполняем PUT запрос на {url}")
     def put(
         self,
         url: URL | str,
@@ -60,6 +64,7 @@ class ApiClient:
         """
         return self.client.put(url=url, params=params, json=json)
 
+    @allure.step("Выполняем DELETE запрос на {url}")
     def delete(
         self,
         url: URL | str,

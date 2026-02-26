@@ -1,3 +1,4 @@
+import allure
 from httpx import Response
 
 from clients.api_client import ApiClient
@@ -9,6 +10,7 @@ from tools.routes import APIRoutes
 class UsersClient(ApiClient):
     """Клиент для работы с ручкой /user"""
 
+    @allure.step("Создание нового пользователя")
     def create_user_api(self, request: CreateUserRequestSchema) -> Response:
         """
         Метод создания нового пользователя
@@ -18,6 +20,7 @@ class UsersClient(ApiClient):
 
         return self.post(url=APIRoutes.USER, json=request.model_dump(by_alias=True))
 
+    @allure.step("Получение данных пользователя по username {user_name}")
     def get_user_by_username_api(self, user_name: str) -> Response:
         """
         Метод получения данных пользователя по username
@@ -26,6 +29,7 @@ class UsersClient(ApiClient):
         """
         return self.get(url=f"{APIRoutes.USER}/{user_name}")
 
+    @allure.step("Обновление данных пользователя по username {user_name}")
     def update_user_by_username_api(self, user_name: str, request: UpdateUserRequestSchema) -> Response:
         """
         Метод обновляет существующего пользователя
@@ -35,6 +39,7 @@ class UsersClient(ApiClient):
         """
         return self.put(url=f"{APIRoutes.USER}/{user_name}", json=request.model_dump(by_alias=True))
 
+    @allure.step("Удаление пользователя по username {user_name}")
     def delete_user_by_username_api(self, user_name: str) -> Response:
         """
         Метод удаления существующего пользователя
