@@ -1,0 +1,15 @@
+INFO     HTTP_CLIENT:event_hooks.py:13 Выполняем POST запрос на https://petstore.swagger.io/v2/user
+INFO     HTTP_CLIENT:event_hooks.py:21 Получен ответ 200 от https://petstore.swagger.io/v2/user
+INFO     HTTP_CLIENT:event_hooks.py:13 Выполняем GET запрос на https://petstore.swagger.io/v2/user/sergeevarseni
+INFO     HTTP_CLIENT:event_hooks.py:21 Получен ответ 200 от https://petstore.swagger.io/v2/user/sergeevarseni
+INFO     BASE_ASSERTION:base_assertion.py:20 Проверка, что фактический 200 код ответа соответствует ожидаемому 200
+INFO     USER_ASSERTION:users_assertion.py:40 Проверяем полученного пользователя
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что id равно 4274
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что user_name равно sergeevarseni
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что first_name равно Август
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что last_name равно Кошелев
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что email равно agafja_77@example.net
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что password равно Qm0$PW)od$
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что phone равно 8 049 169 1421
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что user_status равно 1799
+INFO     SCHEMA_ASSERTION:schema_assertion.py:21 Валидация JSON схемы
