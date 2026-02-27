@@ -28,7 +28,7 @@ jobs:
 
       - name: Run API tests with pytest and allure results
         run: |
-          pytest -m "regression" --alluredir allure-results
+          pytest -m regression --alluredir allure-results
 
       - name: Upload allure-results package
         if: always()
@@ -51,7 +51,13 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Download allure relusts
+      - name: Download allure results
+        uses: actions/download-artifact@v8
+        with:
+          name: allure-results
+          path: allure-results
+
+      - name: Generates Allure Report with history
         uses: simple-elf/allure-report-action@v1.13
         if: always()
         with:
