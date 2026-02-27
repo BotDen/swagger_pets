@@ -4,6 +4,10 @@ from clients.errors.errors_schema import ValidationErrorSchema
 from clients.users.users_schema import CreateUserRequestSchema, GetUserResponseSchema
 from tools.assertions.base_assertion import assert_equal
 from tools.assertions.errors_assertion import assert_validation_error
+from tools.logger import get_logger
+
+
+logger = get_logger("USER_ASSERTION")
 
 
 @allure.step("Проверяем созданного пользователя")
@@ -14,6 +18,7 @@ def assert_created_user(request: CreateUserRequestSchema, response: GetUserRespo
     :param response: Ответ на запрос пользователя после создания
     :raises AssertionError: Если хотя бы одно поле не совпало
     """
+    logger.info("Проверяем созданного пользователя")
     assert_equal(actual=response.id, expected=request.id, name="id")
     assert_equal(actual=response.user_name, expected=request.user_name, name="user_name")
     assert_equal(actual=response.first_name, expected=request.first_name, name="first_name")
@@ -32,6 +37,7 @@ def assert_get_user_response(get_user_response: GetUserResponseSchema, create_us
     :param create_user_request: Данные на создание пользователя
     :return AssertionError: Если хотя бы одно поле не совпало
     """
+    logger.info("Проверяем полученного пользователя")
     assert_equal(actual=get_user_response.id, expected=create_user_request.id, name="id")
     assert_equal(actual=get_user_response.user_name, expected=create_user_request.user_name, name="user_name")
     assert_equal(actual=get_user_response.first_name, expected=create_user_request.first_name, name="first_name")
@@ -53,4 +59,5 @@ def assert_get_not_exist_user(actual: ValidationErrorSchema):
         type="error",
         message="User not found",
     )
+    logger.info("Проверяем запрос на несуществующего пользователя")
     assert_validation_error(actual=actual, expected=expected_error)
