@@ -17,7 +17,7 @@ def assert_status_code(actual: int, expected: int):
     :param expected: Ожидаемый статус код
     :raises AssertionError: Если статус коды не совпадут
     """
-    logger.info("Проверка, что фактический {actual} код ответа соответствует ожидаемому {expected}")
+    logger.info(f"Проверка, что фактический {actual} код ответа соответствует ожидаемому {expected}")
     assert actual == expected, (
         f"Некорректный статус код "
         f"Ожидаемый статус код {expected} "
@@ -34,7 +34,7 @@ def assert_equal(actual: Any, expected: Any, name: str):
     :param name: Имея элемента
     :return AssertionError: Если значения не совпали
     """
-    logger.info("Проверка, что {name} равно {expected}")
+    logger.info(f"Проверка, что {name} равно {expected}")
     assert actual == expected, (
         f"Некорректное значение {name} "
         f"Ожидаемое значение {expected} "

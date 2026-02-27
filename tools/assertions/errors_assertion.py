@@ -2,6 +2,10 @@ import allure
 
 from clients.errors.errors_schema import ValidationErrorSchema
 from tools.assertions.base_assertion import assert_equal
+from tools.logger import get_logger
+
+
+logger = get_logger("ERROR_ASSERTION")
 
 
 @allure.step("Проверяем фактически полученную ошибку с ожидаемой")
@@ -12,6 +16,7 @@ def assert_validation_error(actual: ValidationErrorSchema, expected: ValidationE
     :param expected: Ожидаемая ошибка
     :return AssertionError: Если хотя бы одно поле не совпало
     """
+    logger.info("Проверяем фактически полученную ошибку с ожидаемой")
     assert_equal(actual=actual.code, expected=expected.code, name="code")
     assert_equal(actual=actual.type, expected=expected.type, name="type")
     assert_equal(actual=actual.message, expected=expected.message, name="message")
