@@ -1,0 +1,14 @@
+INFO     HTTP_CLIENT:event_hooks.py:13 Выполняем POST запрос на https://petstore.swagger.io/v2/user
+INFO     HTTP_CLIENT:event_hooks.py:21 Получен ответ 200 от https://petstore.swagger.io/v2/user
+INFO     HTTP_CLIENT:event_hooks.py:13 Выполняем DELETE запрос на https://petstore.swagger.io/v2/user/borisovroman
+INFO     HTTP_CLIENT:event_hooks.py:21 Получен ответ 200 от https://petstore.swagger.io/v2/user/borisovroman
+INFO     BASE_ASSERTION:base_assertion.py:20 Проверка, что фактический 200 код ответа соответствует ожидаемому 200
+INFO     HTTP_CLIENT:event_hooks.py:13 Выполняем GET запрос на https://petstore.swagger.io/v2/user/borisovroman
+INFO     HTTP_CLIENT:event_hooks.py:21 Получен ответ 404 от https://petstore.swagger.io/v2/user/borisovroman
+INFO     BASE_ASSERTION:base_assertion.py:20 Проверка, что фактический 404 код ответа соответствует ожидаемому 404
+INFO     USER_ASSERTION:users_assertion.py:62 Проверяем запрос на несуществующего пользователя
+INFO     ERROR_ASSERTION:errors_assertion.py:19 Проверяем фактически полученную ошибку с ожидаемой
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что code равно 1
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что type равно error
+INFO     BASE_ASSERTION:base_assertion.py:37 Проверка, что message равно User not found
+INFO     SCHEMA_ASSERTION:schema_assertion.py:21 Валидация JSON схемы

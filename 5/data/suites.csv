@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","106","Удаление пользователя по username","Pet Store","Fri Feb 27 10:05:47 UTC 2026","passed","Fri Feb 27 10:05:47 UTC 2026","TestUser","User","",""
+"","367","Успешное создание нового пользователя","Pet Store","Fri Feb 27 10:05:46 UTC 2026","passed","Fri Feb 27 10:05:47 UTC 2026","TestUser","User","",""
+"","58","Получение данных пользователя по username","Pet Store","Fri Feb 27 10:05:47 UTC 2026","passed","Fri Feb 27 10:05:47 UTC 2026","TestUser","User","",""
